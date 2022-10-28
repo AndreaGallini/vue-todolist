@@ -12,20 +12,20 @@
     <div id="app">
         <div>
             <h3>Aggiungi task</h3>
-            <input type="text" v-model="aggiunta" @keyup.enter ="add">
+            <input type="text"  v-model="aggiunta.text" @keyup.enter ="add">
             <button @click="add">Add</button>
             <div v-if="minlength">il task deve essere più lungo</div>
         </div>
         <ul v-if="list.length > 0">
             <li v-for="(item,index) in list" :key="index" >
-                <span @click="allerta">{{list.text}}</span>
+                <span @click="allerta">{{item.text}}</span>
                 <button @click="removeTask(index)">cancella</button>
             </li>
         </ul>
         <div v-else>Hai finito</div>
 
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
 
     <script src="./script.js"></script>
 
