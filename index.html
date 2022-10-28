@@ -4,26 +4,32 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Slider</title>
+        <title>TODOLIST</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css"/>
 
     </head>
 <body>
-    <div id="app" class="container-md d-flex flex-column align-items-center mt-5">
+    <div id="app" class=" my-container d-flex flex-column align-items-center mt-5">
         <div>
-            <h3>Aggiungi task</h3>
-            <input class="form-control" type="text"  v-model="aggiunta.text" @keyup.enter ="add">
-            <button @click="add">Add</button>
+            <h1>ToDo List</h1>
+            <div class="d-flex myspace">
+                <input  class="form-control myspace" type="text"  v-model="aggiunta.text" @keyup.enter ="add" placeholder="Inserisci una task">
+                <button class="myspace btn-primary btn" @click="add">Add</button>    
+            </div>
             <div v-if="minlength">il task deve essere più lungo</div>
         </div>
-        <ul v-if="list.length > 0">
-            <li v-for="(item,index) in list" :key="index" >
-                <span @click="allerta">{{item.text}}</span>
-                <button @click="removeTask(index)">cancella</button>
-            </li>
-        </ul>
-        <div v-else>Hai finito</div>
+        <div class="container-fluid text-center">
+            <ul v-if="list.length > 0">
+                <li v-for="(item,index) in list" :key="index"  class="d-flex justify-content-between">
+                    <span @click="allerta(item)" :class="item.done === true ? 'checked' :'' ">{{item.text}}</span>
+                    <button class="btn btn-close spacebutton" @click="removeTask(index)"></button>
+                </li>
+            </ul>
+            <div v-else>Hai finito</div>
+    
+        </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>

@@ -15,7 +15,19 @@ createApp({
             {
                 text: 'pantaloni',
                 done: true,
-            }
+            },
+            {
+                text: 'scarpe',
+                done: false,
+            },
+            {
+                text: 'giacca',
+                done: false,
+            },
+            {
+                text: 'pantaloni',
+                done: true,
+            },
         ]
 
     }
@@ -26,7 +38,6 @@ createApp({
             for(let key in this.aggiunta){
                 clone[key] = this.aggiunta[key]
             }
-            console.log(clone)
             if(this.aggiunta.text.length >= 5 ){
                 this.list.unshift(clone);
                 this.minlength = false;
@@ -34,19 +45,21 @@ createApp({
                 this.minlength = true;
             }
 
-         //   this.aggiunta = '';
+           this.aggiunta.text = '';
         },
         removeTask(i){
             this.list.splice(i,1)
         },
-        allerta(){
+        allerta(item){
             console.log('ciao')
-        },
-        checkDone(){
+            this.list.done = true
+            console.log(this.list.done)
             if(this.list.done === true){
-                console.log('vero')
+
             }
-        }
+        },
+
+
     },
     mounted(){
     }
