@@ -54,14 +54,15 @@ createApp({
         removeTask(i){
             this.list.splice(i,1)
         },
-        allerta(item){
+        allerta(index){
           //  console.log('ciao')
           //  console.log(this.list.done)
           fatto = true;
 
         },
-        checked(){
-
+        checked(i){
+         
+        
             this.isActive = !this.isActive;
         
 
