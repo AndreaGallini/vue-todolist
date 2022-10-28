@@ -4,14 +4,15 @@
 
 
 .checked{
-    text-decoration:line-through;
+    opacity: 0.6;
+    text-decoration: line-through;
 }
 .myspace{
     margin: 5px;
 }
 ul{
     list-style: none;
-    background-color: var(--gray);
+ 
     padding: 30px;
 }
 li{
@@ -20,4 +21,63 @@ margin: 20px;
 .my-container{
     width: 700px;
     margin: 0 auto;
+}
+body {
+    background: rgb(68, 100, 173);
+    background: linear-gradient(
+        100deg,
+        rgba(68, 100, 173, 1),
+        rgba(74, 21, 110, 1)
+    );
+    color: white;
+    min-height: 100vh;
+    margin-bottom: 2rem;
+}
+.mybtn {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    font-size: 1.8rem;
+    border: none;
+    background: #f4f4f4;
+    padding: 0.5rem 1rem;
+    color: rgba(74, 21, 110, 1);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.myinput{
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    font-size: 1.8rem;
+    border: none;
+
+    background: #f4f4f4;
+}
+.mybtn:hover {
+    background: rgba(74, 21, 110, 1);
+    color: white;
+}
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mytrash {
+    background-color: rgba(74, 21, 110, 1);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.2s all ease;
+}
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+    max-width: 80%;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+
 }
