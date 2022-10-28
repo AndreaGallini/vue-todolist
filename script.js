@@ -3,6 +3,10 @@ const { createApp } = Vue
 createApp({
   data() {
     return{
+        activeIndex: 0,
+        fatto: false,
+        isActive : false,
+
         aggiunta:{
             text :'',
         },
@@ -51,13 +55,17 @@ createApp({
             this.list.splice(i,1)
         },
         allerta(item){
-            console.log('ciao')
-            this.list.done = true
-            console.log(this.list.done)
-            if(this.list.done === true){
+          //  console.log('ciao')
+          //  console.log(this.list.done)
+          fatto = true;
 
-            }
         },
+        checked(){
+
+            this.isActive = !this.isActive;
+        
+
+        }
 
 
     },
