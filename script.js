@@ -14,7 +14,7 @@ createApp({
             },
             {
                 text: 'pantaloni',
-                done: false,
+                done: true,
             }
         ]
 
@@ -33,9 +33,7 @@ createApp({
             }else{
                 this.minlength = true;
             }
-            if(this.list.done === true){
-                console.log('DOne true')
-            }
+
          //   this.aggiunta = '';
         },
         removeTask(i){
@@ -43,10 +41,14 @@ createApp({
         },
         allerta(){
             console.log('ciao')
+        },
+        checkDone(){
+            if(this.list.done === true){
+                console.log('vero')
+            }
         }
     },
     mounted(){
-
     }
 
 }).mount('#app')
