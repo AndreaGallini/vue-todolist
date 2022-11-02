@@ -23,7 +23,7 @@
         <div class="container-fluid text-center">
             <ul class="todo-list" v-if="list.length > 0">
                 <li v-for="(item,index) in list" :key="index"  class="d-flex justify-content-between">
-                    <span @click="allerta(index)" :class="[isActive ? 'active' : '']">{{item.text}}</span>
+                    <span @click="allerta(index)" :class="[item.done ? 'active' : '']">{{item.text}}</span>
                     <div class="allinea">
                         <button class="mycheck"   @click="checked(index)"><i class="fa-solid fa-check"></i></button>
                         <button class="btn  spacebutton" @click="removeTask(index)"><i class="fa-solid fa-trash mytrash"></i></button>

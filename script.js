@@ -63,7 +63,7 @@ createApp({
         checked(i){
          
         
-            this.isActive = !this.isActive;
+            this.list[i].done = !this.list[i].done;
         
 
         }
